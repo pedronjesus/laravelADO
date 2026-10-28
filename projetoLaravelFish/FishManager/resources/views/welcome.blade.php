@@ -3,52 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish Manager - Bem-vindo</title>
-    <!-- Estilo customizado do projeto -->
-    <link rel="stylesheet" href="{{ asset('css/fish-theme.css') }}">
+    <title>AquaControl • Gestão & Catalogação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: #f7f4ef;">
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-center items-center p-6 antialiased">
 
-    <div class="custom-card" style="text-align: center; max-width: 480px; width: 90%; padding: 40px 30px; border-top: 6px solid #1e6091;">
-        <!-- Logo e Título com Ícone em destaque Terroso -->
-        <div style="font-size: 52px; margin-bottom: 10px;">🐟</div>
+    <!-- Container Principal -->
+    <div class="max-w-md w-full bg-slate-800/80 backdrop-blur-md border border-slate-700/60 rounded-2xl p-8 shadow-2xl text-center space-y-6">
         
-        <h1 style="color: #1e6091; font-size: 28px; margin: 0 0 8px 0; font-weight: bold;">
-            Fish Manager
-        </h1>
-        
-        <p style="color: #8c531e; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
-            Gestão & Catalogação
+        <!-- Ícone / Logo com brilho dourado -->
+        <div class="relative inline-block">
+            <div class="absolute -inset-1 bg-amber-500/20 rounded-full blur-lg"></div>
+            <div class="relative bg-slate-900 border border-amber-500/30 p-4 rounded-full inline-flex items-center justify-center text-4xl shadow-md">
+                🐟
+            </div>
+        </div>
+
+        <!-- Título & Subtítulo -->
+        <div class="space-y-2">
+            <h1 class="text-3xl font-extrabold tracking-tight text-white">
+                Aqua<span class="text-amber-400">Control</span>
+            </h1>
+            <p class="text-xs font-semibold tracking-widest text-amber-400/90 uppercase">
+                Gestão & Catalogação
+            </p>
+        </div>
+
+        <!-- Descrição do Sistema -->
+        <p class="text-sm text-slate-400 leading-relaxed px-2">
+            Sistema otimizado para o controlo de lotes, monitorização de tanques e acompanhamento de habitats de água doce e salgada.
         </p>
 
-        <p style="color: #57534e; font-size: 15px; margin-bottom: 30px; line-height: 1.5;">
-            Sistema simplificado para cadastro de peixes e gerenciamento dos seus habitats de água doce e salgada[cite: 1, 2].
-        </p>
-
-        <!-- Botões de Ação com combinação Azul x Terroso -->
-        @if (Route::has('login'))
-            <div style="display: flex; flex-direction: column; gap: 14px;">
+        <!-- Botões de Ação -->
+        <div class="space-y-3 pt-2">
+            @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="btn-primary-fish" style="text-align: center; padding: 12px; font-size: 16px;">
-                        Acessar Painel (Dashboard)
+                    <a href="{{ url('/dashboard') }}" 
+                       class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all duration-200">
+                        Aceder ao Painel
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="btn-primary-fish" style="text-align: center; padding: 12px; font-size: 16px; background-color: #1e6091;">
+                    <a href="{{ route('login') }}" 
+                       class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all duration-200">
                         Entrar no Sistema
                     </a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn-earth-outline">
+                        <a href="{{ route('register') }}" 
+                           class="block w-full bg-slate-700/60 hover:bg-slate-700 text-slate-200 font-semibold py-3 px-4 rounded-xl border border-slate-600/80 transition-all duration-200">
                             Criar uma Conta
                         </a>
                     @endif
                 @endauth
-            </div>
-        @endif
-
-        <div style="margin-top: 30px; border-top: 1px solid #e5dcce; padding-top: 15px; font-size: 12px; color: #8c531e;">
-            Projeto Avaliativo Laravel • Fish Manager[cite: 1]
+            @endif
         </div>
+
+        <!-- Linha Divisória & Rodapé -->
+        <div class="pt-4 border-t border-slate-700/50">
+            <p class="text-xs text-slate-500">
+                Projeto Avaliativo Laravel • <span class="text-slate-400 font-medium">AquaControl</span>
+            </p>
+        </div>
+
     </div>
 
 </body>

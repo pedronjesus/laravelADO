@@ -1,0 +1,108 @@
+:root {
+    /* Tons Terrosos (Base, Card e Destaques Quentes) */
+    --bg-color: #f7f4ef;         /* Bege areia suave para o fundo principal */
+    --card-bg: #ffffff;          /* Branco limpo para destaques dos cards */
+    --border-color: #e5dcce;    /* Bordas em tom de areia escuro */
+    --earth-accent: #c27d38;    /* Terracota / Madeira suave */
+    --earth-dark: #8c531e;      /* Marrom terroso escuro para textos de destaque */
+
+    /* Tons de Azul (Oceano e Ações) */
+    --primary-color: #1e6091;   /* Azul oceano profundo para botões e links */
+    --primary-dark: #1a4971;    /* Azul marinho para hover */
+    --blue-soft: #e0f2fe;       /* Azul claro para tabelas e badges */
+    
+    /* Texto */
+    --text-color: #2d2a26;      /* Grafite terroso escuro para leitura confortável */
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(140, 83, 30, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary-fish {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+.btn-primary-fish:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-earth-outline {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    font-size: 15px;
+    color: var(--earth-accent);
+    border: 2px solid var(--earth-accent);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-earth-outline:hover {
+    background-color: var(--earth-accent);
+    color: #ffffff;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table th {
+    background-color: #f0ebe1;
+    color: var(--earth-dark);
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--earth-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #faf8f5;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 96, 145, 0.2);
+}
